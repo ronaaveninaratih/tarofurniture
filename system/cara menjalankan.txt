@@ -1,0 +1,3 @@
+Cara Menjalankannya :
+
+C:\xampp\htdocs\Tugas3DpwRona>php artisan serve

@@ -1,0 +1,8 @@
+<footer class="main-footer">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+      Rona A.R
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2021 <a href="https://adminlte.io">Teknik Informatika</a>.</strong> Rona Avenina Ratih.
+</footer>
