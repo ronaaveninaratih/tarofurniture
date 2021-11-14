@@ -44,7 +44,7 @@
                         <a href="{{url('admin/produk/create')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i> Tambah Data </a>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table table-datatable">
                             <thead>
                                 <th>No</th>
                                 <th>Aksi</th>
