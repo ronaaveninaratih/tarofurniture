@@ -22,8 +22,8 @@ class AuthController extends Controller
         return redirect('login');
     }
 
-    function registration() {
-
+    function showregistrasi() {
+        return view('register');
     }
 
     function forgotPassword() {

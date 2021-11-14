@@ -18,7 +18,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('Home');
+    return view('home');
 });
 
 Route::get('/base', function () {
@@ -29,6 +29,8 @@ Route::get('/table', function () {
     return view('backview.table');
 });
 
+
+
 Route::get('/home', [HomeController::class, 'showhome']);
 Route::get('/dashboard', [HomeController::class, 'showdashboard']);
 Route::get('/kategori', [HomeController::class, 'showkategori']);
@@ -36,23 +38,12 @@ Route::get('/supplier', [HomeController::class, 'showsupplier']);
 Route::get('/product', [HomeController::class, 'showproduct']);
 Route::get('/pelanggan', [HomeController::class, 'showpelanggan']);
 
+Route::prefix('admin')->middleware('auth')->group(function(){
+    Route::resource('produk', ProdukController::class);
+    Route::resource('user', UserController::class);
+});
 
-Route::get('/produk', [ProdukController::class, 'index']);
-Route::get('produk/create', [ProdukController::class, 'create']);
-Route::post('/produk', [ProdukController::class, 'store']);
-Route::get('produk/{produk}', [ProdukController::class, 'show']);
-Route::get('produk/{produk}/edit', [ProdukController::class, 'edit']);
-Route::put('produk/{produk}', [ProdukController::class, 'update']);
-Route::delete('produk/{produk}', [ProdukController::class, 'destroy']);
-
-Route::get('/user', [UserController::class, 'index']);
-Route::get('user/create', [UserController::class, 'create']);
-Route::post('/user', [UserController::class, 'store']);
-Route::get('user/{user}', [UserController::class, 'show']);
-Route::get('user/{user}/edit', [UserController::class, 'edit']);
-Route::put('user/{user}', [UserController::class, 'update']);
-Route::delete('user/{user}', [UserController::class, 'destroy']);
-
-Route::get('login', [AuthController::class, 'showLogin']);
+Route::get('login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('login', [AuthController::class, 'loginProcess']);
 Route::get('logout', [AuthController::class, 'logout']);
+Route::get('register', [AuthController::class, 'showregistrasi']);

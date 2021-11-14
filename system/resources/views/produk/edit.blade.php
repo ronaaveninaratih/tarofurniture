@@ -6,10 +6,10 @@
         <div class="col-md-12 mt-5">
           <div class="card">
             <div class="card-header">
-              Tambah Data Produk
+              Ubah Data Produk
             </div>
             <div class="card-body">
-                <form action="{{url('produk', $produk->id)}}" method="post">
+                <form action="{{url('admin/produk', $produk->id)}}" method="post">
                   @csrf
                   @method("PUT")
                   <div class="form-group">

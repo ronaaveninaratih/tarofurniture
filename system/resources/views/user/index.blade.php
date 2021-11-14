@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header">
                         Data User
-                        <a href="{{url('user/create')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i> Tambah Data </a>
+                        <a href="{{url('admin/user/create')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i> Tambah Data </a>
                     </div>
                     <div class="card-body">
                         <table class="table">
@@ -25,9 +25,9 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{url('user', $user->id)}}" class="btn btn-dark"><i class="fa fa-info"></i></a>
-                                            <a href="{{url('user', $user->id)}}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                                            <form action="{{url('user', $user->id)}}" method="post" class="form-inline">
+                                            <a href="{{url('admin/user', $user->id)}}" class="btn btn-dark"><i class="fa fa-info"></i></a>
+                                            <a href="{{url('admin/user', $user->id)}}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                            <form action="{{url('admin/user', $user->id)}}" method="post" class="form-inline">
                                                 @csrf
                                                 @method("delete")
                                                 <button class="btn btn-danger"><i class="fa fa-trash"></i></button>

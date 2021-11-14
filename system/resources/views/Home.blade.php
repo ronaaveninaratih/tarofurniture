@@ -296,10 +296,11 @@
 				                    <li class=" scroll active"><a href="#home">home</a></li>
 				                    <li class="scroll"><a href="#new-arrivals">new arrival</a></li>
 				                    <li class="scroll"><a href="#feature">features</a></li>
-				                    <li class="scroll"><a href="#blog">blog</a></li>
-				                    <li class="scroll"><a href="#newsletter">contact</a></li>
 									<li class="nav-item ">
                 						<a class="nav-link" href="/login"> Login </a>
+              						</li>
+              						<li class="nav-item ">
+                						<a class="nav-link" href="/register"> Registration </a>
               						</li>
 				                </ul><!--/.nav -->
 				            </div><!-- /.navbar-collapse -->

@@ -7,8 +7,8 @@
             <div class="col-md-12 mt-5">
                 <div class="card">
                     <div class="card-header">
-                        Data Product
-                        <a href="{{url('produk/create')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i> Tambah Data </a>
+                        Data Produk
+                        <a href="{{url('admin/produk/create')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i> Tambah Data </a>
                     </div>
                     <div class="card-body">
                         <table class="table">
@@ -25,9 +25,9 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{url('produk', $produk->id)}}" class="btn btn-dark"><i class="fa fa-info"></i></a>
-                                            <a href="{{url('produk', $produk->id)}}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                                            <form action="{{url('produk', $produk->id)}}" method="post" class="form-inline">
+                                            <a href="{{url('admin/produk', $produk->id)}}" class="btn btn-dark"><i class="fa fa-info"></i></a>
+                                            <a href="{{url('admin/produk', $produk->id)}}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                            <form action="{{url('admin/produk', $produk->id)}}" method="post" class="form-inline">
                                                 @csrf
                                                 @method("delete")
                                                 <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
