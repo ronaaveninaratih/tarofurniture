@@ -12,7 +12,7 @@ class HomeController extends Controller{
         return view('home');
     }
 
-    function showlogin(){
+    function showLogin(){
         return view('login');
     }
 

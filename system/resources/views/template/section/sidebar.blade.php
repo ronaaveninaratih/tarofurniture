@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ url('public') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Admin Tarofurniture</span>
+      <span class="brand-text font-weight-light">Tarofurniture</span>
     </a>
 
     <!-- Sidebar -->
@@ -10,10 +10,16 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ url('public') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ url('public') }}/dist/img/rona.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Rona Avenina</a>
+          <a href="#" class="d-block">
+          @if(Auth::check())
+            {{request()->user()->nama}}
+          @else
+            Silahkan login
+          @endif
+          </a>
         </div>
       </div>
 
@@ -44,7 +50,7 @@
                 <a href="/produk" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
-                    Data Produk
+                    Produk
                     </p>
                 </a>
             </li>
@@ -52,15 +58,23 @@
                 <a href="/kategori" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
-                    Kategori Produk
+                    Kategori
                     </p>
                 </a>
+            </li>
+            <li class="nav-item">
+              <a href="/user" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                  <p>
+                  User
+                  </p>
+              </a>
             </li>
             <li class="nav-item menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Data
+                Master Data
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -78,14 +92,6 @@
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a href="/table" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Tabel Statistik
-              </p>
-            </a>
           </li>
         </ul>
       </nav>

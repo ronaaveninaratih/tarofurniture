@@ -34,17 +34,21 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          Rona Avenina
-          <img src="{{ url('public') }}/dist/img/user3-128x128.jpg" alt="User Avatar" style="height: 130%" class="img-circle">
+          @if(Auth::check())
+            {{request()->user()->nama}}
+          @else
+            Silahkan login
+          @endif
+          <img src="{{ url('public') }}/dist/img/rona.jpg" alt="User Avatar" style="height: 130%" class="img-circle">
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <a href="#" class="dropdown-item">
-          <i class="fa fa-user"></i> Prifile
+          <i class="fa fa-user"></i> Profile
           </a>
           <a href="#" class="dropdown-item">
           <i class="fa fa-cog"></i> Setting
           </a>
-          <a href="#" class="dropdown-item">
+          <a href="{{url('logout')}}" class="dropdown-item">
           <i class="fa fa-sign-out"></i> Logout
           </a>
         </div>

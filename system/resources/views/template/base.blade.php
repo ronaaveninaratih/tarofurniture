@@ -9,6 +9,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tarofurniture</title>
 
+  <!-- For favicon png -->
+  <link rel="shortcut icon" type="image/icon" href="{{ url('public') }}/assets/logo/favicon.png"/>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
@@ -20,11 +22,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
-  @include('template.saction.header')
+  @include('template.section.header')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  @include('template.saction.sidebar')
+  @include('template.section.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -49,7 +51,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-@include('template.saction.footer')  
+@include('template.section.footer')  
 </div>
 <!-- ./wrapper -->
 
