@@ -50,4 +50,19 @@ class ProdukController extends Controller {
         return redirect('produk')->with('danger', 'Data Berhasil Dihapus');
 
     }
+    function filter(){
+        $nama = request('nama');
+        $stok = explode(",", request('stok'));
+        $data['harga_min'] = $harga_min = request('harga_min');
+        $data['harga_max'] = $harga_max = request('harga_max');
+        //$data['list_produk'] = Produk::where('nama', 'like', "%$nama%")->get();
+        //$data['list_produk'] = Produk::whereIn('stok', $stok)->get();
+        //$data['list_produk'] = Produk::whereBetween('harga', [$harga_min, $harga_max])->get();
+        //$data['list_produk'] = Produk::whereNot('stok', '<>', $stok)->get();
+        $data['list_produk'] = Produk::whereNotIn('stok', $stok)->get();
+        //$data['list_produk'] = Produk::whereNotBetween('harga', [$harga_min, $harga_max])->get();
+        $data['nama'] = $nama;
+        $data['stok'] = request('stok');
+        return view('produk.index', $data);
+    }
 }

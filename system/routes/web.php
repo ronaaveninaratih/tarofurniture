@@ -39,6 +39,7 @@ Route::get('/product', [HomeController::class, 'showproduct']);
 Route::get('/pelanggan', [HomeController::class, 'showpelanggan']);
 
 Route::prefix('admin')->middleware('auth')->group(function(){
+    Route::post('produk/filter', [ProdukController::class, 'filter']);
     Route::resource('produk', ProdukController::class);
     Route::resource('user', UserController::class);
 });
