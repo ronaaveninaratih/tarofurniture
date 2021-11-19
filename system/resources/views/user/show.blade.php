@@ -1,4 +1,4 @@
-@extends('Template.base')
+@extends('template.base')
 
 @section('content')
     <div class="container">
@@ -14,6 +14,9 @@
                 <p>
                     {{"@".$user->user_name}} |
                     Email : {{$user->email}} 
+                </p>
+                <p>
+                    No. Handphone : {{$user->detail->no_handphone}} 
                 </p>            
             </div>
           </div>

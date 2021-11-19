@@ -1,4 +1,4 @@
-@extends('Template.base')
+@extends('template.base')
 
 @section('content')
     <div class="container">
@@ -17,12 +17,16 @@
                       <input type="text" class="form-control" name="nama" value="{{$user->nama}}">
                   </div>
                   <div class="form-group">
-                      <label for="" class="control-label">UserName</label>
+                      <label for="" class="control-label">Username</label>
                       <input type="text" class="form-control" name="user_name" value="{{$user->user_name}}">
                   </div>
                   <div class="form-group">
                       <label for="" class="control-label">Email</label>
                       <input type="email" class="form-control" name="email" value="{{$user->email}}">
+                  </div>
+                  <div class="form-group">
+                      <label for="" class="control-label">No. Handphone</label>
+                      <input type="text" class="form-control" name="no_handphone" value="{{$user->detail->no_handphone}}">
                   </div>
                   <div class="form-group">
                       <label for="" class="control-label">Password</label>

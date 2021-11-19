@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\UserDetail;
 
 class UserController extends Controller {
     function index(){
-        $data['list_user'] = User::all();
+        $data['list_user'] = User::withCount('produk')->get();
         return view('user.index', $data);
     }
     function create(){
@@ -19,7 +20,12 @@ class UserController extends Controller {
         $user->password = bcrypt(request('password'));
         $user->save();
 
-        return redirect('user')->with('success', 'Data Berhasil Ditambahkan');
+        $user_detail = new UserDetail;
+        $user_detail->id_user = $user->id;
+        $user_detail->no_handphone = request('no_handphone');
+        $user_detail->save();
+
+        return redirect('admin/user')->with('success', 'Data Berhasil Ditambahkan');
 
     }
     function show(User $user){
@@ -38,13 +44,18 @@ class UserController extends Controller {
         $user->email = request('email');
         if(request('password')) $user->password = bcrypt(request('password'));
         $user->save();
+
+        $user_detail = new UserDetail;
+        $user_detail->id_user = $user->id;
+        $user_detail->no_handphone = request('no_handphone');
+        $user_detail->save();
     
-        return redirect('user')->with('success', 'Data Berhasil Diedit');
+        return redirect('admin/user')->with('success', 'Data Berhasil Diedit');
     }
     function destroy(User $user){
         $user->delete();
 
-        return redirect('user')->with('danger', 'Data Berhasil Dihapus');
+        return redirect('admin/user')->with('danger', 'Data Berhasil Dihapus');
 
     }
 }
