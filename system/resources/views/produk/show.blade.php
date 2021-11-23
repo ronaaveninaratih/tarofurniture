@@ -18,7 +18,7 @@
                             Stok : {{$produk->stok}} | 
                             Berat : {{$produk->berat}} kg |
                             Seller : {{$produk->seller->user_name}} |
-                            Tanggal Produksi : {{$produk->tanggal_produksi}}
+                            Tanggal Produksi : {{$produk->created_at->format("d M Y")}}
                         </p>
                         <p>
                             {!! nl2br($produk->deskripsi) !!}
