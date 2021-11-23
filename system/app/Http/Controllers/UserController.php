@@ -17,7 +17,8 @@ class UserController extends Controller {
         $user->nama = request('nama');
         $user->user_name = request('user_name');
         $user->email = request('email');
-        $user->password = bcrypt(request('password'));
+        $user->password = request('password');
+        $user->jenis_kelamin = 2;
         $user->save();
 
         $user_detail = new UserDetail;
@@ -42,7 +43,7 @@ class UserController extends Controller {
         $user->nama = request('nama');
         $user->user_name = request('user_name');
         $user->email = request('email');
-        if(request('password')) $user->password = bcrypt(request('password'));
+        if(request('password')) $user->password = request('password');
         $user->save();
 
         $user_detail = new UserDetail;
