@@ -8,7 +8,9 @@ class Produk extends Model{
     protected $table = 'produk';
 
     protected $casts = [
-        'created_at' => 'datetime'
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'berat' => 'decimal:2'
     ];
 
     function seller(){

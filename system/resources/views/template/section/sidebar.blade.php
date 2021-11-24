@@ -47,7 +47,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/produk" class="nav-link">
+                <a href="/admin/produk" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
                     Produk
@@ -63,7 +63,7 @@
                 </a>
             </li>
             <li class="nav-item">
-              <a href="/user" class="nav-link">
+              <a href="/admin/user" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                   <p>
                   User
