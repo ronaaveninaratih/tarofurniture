@@ -23,6 +23,9 @@
                         <p>
                             {!! nl2br($produk->deskripsi) !!}
                         </p>
+                        <p>
+                            <img src="{{url("public", $produk->foto)}}" alt="">
+                        </p>
                     </div>
                 </div>
             </div>

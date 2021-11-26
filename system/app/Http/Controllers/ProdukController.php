@@ -16,11 +16,14 @@ class ProdukController extends Controller {
         $produk = new Produk;
         $produk->id_user = request()->user()->id;
         $produk->nama = request('nama');
+        $produk->foto = request('foto');
         $produk->harga = request('harga');
         $produk->berat = request('berat');
         $produk->stok = request('stok');
         $produk->deskripsi = request('deskripsi');
         $produk->save();
+
+        $produk->handleUpload();
 
         return redirect('admin/produk');
 
@@ -37,6 +40,7 @@ class ProdukController extends Controller {
     }
     function update(Produk $produk){
         $produk->nama = request('nama');
+        $produk->foto = request('foto');
         $produk->harga = request('harga');
         $produk->berat = request('berat');
         $produk->stok = request('stok');
