@@ -4,5 +4,5 @@
       Rona A.R
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2021 <a href="https://adminlte.io">Teknik Informatika</a>.</strong> Rona Avenina Ratih.
+    <strong>Copyright &copy; 2021 Teknik Informatika.</strong> <a href="https://www.instagram.com/ronaavenina/">Rona Avenina Ratih</a>
 </footer>
