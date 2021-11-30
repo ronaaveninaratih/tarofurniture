@@ -21,6 +21,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ url('public') }}/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ url('public') }}/dist/css/adminlte.min.css">
+  @stack('style')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -80,6 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ url('public') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{ url('public') }}/dist/js/adminlte.min.js"></script>
+@stack('script')
 <script>
   $(".table-datatable").DataTable();
 </script>

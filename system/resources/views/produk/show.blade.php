@@ -13,13 +13,7 @@
                     <div class="card-body">
                         <h1>{{$produk->nama}}</h1>
                         <hr>
-                        <p>
-                            {{$produk->harga}} |
-                            Stok : {{$produk->stok}} | 
-                            Berat : {{$produk->berat}} kg |
-                            Seller : {{$produk->seller->user_name}} |
-                            Tanggal Produksi : {{$produk->created_at->format("d M Y")}}
-                        </p>
+                        @include('produk.show.detail')
                         <p>
                             {!! nl2br($produk->deskripsi) !!}
                         </p>
