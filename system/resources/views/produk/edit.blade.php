@@ -2,14 +2,21 @@
 
 @section('content')
     <div class="container">
-      <div class="row">
-        <div class="col-md-12 mt-5">
+      <div class="row mt-5">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                 <img src="{{url('public', $produk->foto)}}" alt="" class="img-fluid">   
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
           <div class="card">
             <div class="card-header">
               Ubah Data Produk
             </div>
             <div class="card-body">
-                <form action="{{url('admin/produk', $produk->id)}}" method="post">
+                <form action="{{url('admin/produk', $produk->id)}}" method="post" enctype="multipart/form-data">
                   @csrf
                   @method("PUT")
                   <div class="form-group">
@@ -17,7 +24,13 @@
                       <input type="text" class="form-control" name="nama" value="{{$produk->nama}}">
                   </div>
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="" class="control-label">Foto</label>
+                            <input type="file" class="form-control" name="foto" accept=".png">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label for="" class="control-label">Harga</label>
                             <input type="text" class="form-control" name="harga" value="{{$produk->harga}}">
