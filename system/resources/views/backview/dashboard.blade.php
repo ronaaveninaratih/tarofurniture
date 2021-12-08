@@ -1,4 +1,4 @@
-@extends('Template.base')
+@extends('template.base')
 
 @section('content')
     <h1>Dashboard</h1>

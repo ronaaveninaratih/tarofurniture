@@ -38,6 +38,8 @@ Route::get('/supplier', [HomeController::class, 'showsupplier']);
 Route::get('/product', [HomeController::class, 'showproduct']);
 Route::get('/pelanggan', [HomeController::class, 'showpelanggan']);
 
+Route::get('test/{produk}/{hargaMin?}/{hargaMax?}', [HomeController::class, 'test']);
+
 Route::prefix('admin')->middleware('auth')->group(function(){
     Route::post('produk/filter', [ProdukController::class, 'filter']);
     Route::resource('produk', ProdukController::class);
@@ -48,3 +50,5 @@ Route::get('login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('login', [AuthController::class, 'loginProcess']);
 Route::get('logout', [AuthController::class, 'logout']);
 Route::get('register', [AuthController::class, 'showregistrasi']);
+
+Route::get('test-collection', [HomeController::class, 'testCollection']);
