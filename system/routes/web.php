@@ -52,3 +52,4 @@ Route::get('logout', [AuthController::class, 'logout']);
 Route::get('register', [AuthController::class, 'showregistrasi']);
 
 Route::get('test-collection', [HomeController::class, 'testCollection']);
+Route::get('test-ajax', [HomeController::class, 'testAjax']);

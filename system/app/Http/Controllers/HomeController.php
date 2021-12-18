@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\Provinsi;
 
 class HomeController extends Controller{
 
@@ -85,5 +86,10 @@ class HomeController extends Controller{
         return view('test-collection', $data);
 
         dd($list_chair, $collection, $list_produk);
+    }
+
+    function testAjax(){
+        $data['list_provinsi'] = Provinsi::all();
+        return view('test-ajax', $data);
     }
 }
