@@ -16,6 +16,12 @@
           <a href="#" class="d-block">
           @if(Auth::check())
             {{request()->user()->nama}}
+          @elseif(Auth::guard('pembeli')->check())
+            {{Auth::guard('pembeli')->user()->nama}}
+            <br>Pembeli
+          @elseif(Auth::guard('penjual')->check())
+            {{Auth::guard('penjual')->user()->nama}}
+            <br>Penjual
           @else
             Silahkan login
           @endif

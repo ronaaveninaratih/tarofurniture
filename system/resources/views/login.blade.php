@@ -37,6 +37,12 @@
 	              <input type="password" class="form-control" name="password" placeholder="Password" required>
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
+	            <!-- <div class="form-group">
+	              <select name="login_as" class="form-control">
+	              	<option value="1">Pembeli</option>
+	              	<option value="2">Penjual</option>
+	              </select>
+	            </div> -->
 	            <div class="form-group">
 	            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
 	            </div>

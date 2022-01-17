@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,16 +35,21 @@ Route::get('/table', function () {
 
 Route::get('/home', [HomeController::class, 'showhome']);
 Route::get('/dashboard', [HomeController::class, 'showdashboard']);
+Route::get('/dashboard/{status}', [HomeController::class, 'showdashboard']);
 Route::get('/kategori', [HomeController::class, 'showkategori']);
 Route::get('/supplier', [HomeController::class, 'showsupplier']);
 Route::get('/product', [HomeController::class, 'showproduct']);
 Route::get('/pelanggan', [HomeController::class, 'showpelanggan']);
 
+Route::get('setting', [SettingController::class, 'index']);
+Route::post('setting', [SettingController::class, 'store']);
+
 Route::get('test/{produk}/{hargaMin?}/{hargaMax?}', [HomeController::class, 'test']);
 
-Route::prefix('admin')->middleware('auth')->group(function(){
+Route::prefix('admin/')->middleware('auth')->group(function(){
     Route::post('produk/filter', [ProdukController::class, 'filter']);
     Route::resource('produk', ProdukController::class);
+    Route::resource('product', ProductController::class);
     Route::resource('user', UserController::class);
 });
 

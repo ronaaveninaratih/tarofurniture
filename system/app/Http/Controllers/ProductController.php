@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 
-class ProdukController extends Controller {
+class ProductController extends Controller {
     function index(){
         $user = request()->user();
-        $data['list_produk'] = $user->produk;
+        $data['list_produk'] = Product::all();
         return view('produk.index', $data);
     }
     function create(){

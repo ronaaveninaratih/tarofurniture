@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Models\Produk;
 use App\Models\Provinsi;
+use Config;
 
 class HomeController extends Controller{
 
